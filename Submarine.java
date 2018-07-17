@@ -1,4 +1,3 @@
-package submarine;
 import java.util.Random;
 class Map{
 	private char map[][];
