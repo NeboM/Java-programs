@@ -60,5 +60,3 @@ public class Submarine {
 		map1.print();
 	}
 }
-
-
