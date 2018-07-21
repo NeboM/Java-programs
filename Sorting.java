@@ -1,5 +1,3 @@
-package Algorithms;
-
 public class Sorting {
 	
 	private final int MAX_ARRAY_SIZE = 50;
