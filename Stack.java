@@ -1,5 +1,3 @@
-package Algorithms;
-
 public class Stack{
 	
 	private int stackSize;
