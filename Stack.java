@@ -51,11 +51,14 @@ public class Stack{
 		
 		
 	public static void main(String [] args) {
+		
 		Stack ob1 = new Stack(10);
 		ob1.displayStack();
-		for(int i = 0; i < ob1.getStackSize(); i++) {
+		
+		for(int i = 0; i < ob1.getStackSize(); i++){ 
 			ob1.push(Integer.toString(i+10));
 		}
+		
 		System.out.println();
 		ob1.displayStack();
 		ob1.pop();
@@ -70,8 +73,101 @@ public class Stack{
 		
 		// the last execution will try to remove item from the stack
 		// but will not succeed since there are no items in the stack
-		// and "No values in the stack for poping"
+		//  "Stack underflow: no item found." message will be displayed.
 		for(int i = 0; i < 11; i++) ob1.pop();
+		
 		ob1.displayStack();
 	}
 }
+
+/*   	OUTPUT: 
+
+----------------
+  0   -  noVALUE
+  1   -  noVALUE
+  2   -  noVALUE
+  3   -  noVALUE
+  4   -  noVALUE
+  5   -  noVALUE
+  6   -  noVALUE
+  7   -  noVALUE
+  8   -  noVALUE
+  9   -  noVALUE
+----------------
+10 was successfully added to the stack.
+11 was successfully added to the stack.
+12 was successfully added to the stack.
+13 was successfully added to the stack.
+14 was successfully added to the stack.
+15 was successfully added to the stack.
+16 was successfully added to the stack.
+17 was successfully added to the stack.
+18 was successfully added to the stack.
+19 was successfully added to the stack.
+
+----------------
+  0   -  10
+  1   -  11
+  2   -  12
+  3   -  13
+  4   -  14
+  5   -  15
+  6   -  16
+  7   -  17
+  8   -  18
+  9   -  19
+----------------
+19 was removed from the stack.
+18 was removed from the stack.
+----------------
+  0   -  10
+  1   -  11
+  2   -  12
+  3   -  13
+  4   -  14
+  5   -  15
+  6   -  16
+  7   -  17
+  8   -  noVALUE
+  9   -  noVALUE
+----------------
+10 was successfully added to the stack.
+11 was successfully added to the stack.
+Stack overflow: cannot push new items to the stack.
+----------------
+  0   -  10
+  1   -  11
+  2   -  12
+  3   -  13
+  4   -  14
+  5   -  15
+  6   -  16
+  7   -  17
+  8   -  10
+  9   -  11
+----------------
+11 was removed from the stack.
+10 was removed from the stack.
+17 was removed from the stack.
+16 was removed from the stack.
+15 was removed from the stack.
+14 was removed from the stack.
+13 was removed from the stack.
+12 was removed from the stack.
+11 was removed from the stack.
+10 was removed from the stack.
+Stack underflow: no item found.
+----------------
+  0   -  noVALUE
+  1   -  noVALUE
+  2   -  noVALUE
+  3   -  noVALUE
+  4   -  noVALUE
+  5   -  noVALUE
+  6   -  noVALUE
+  7   -  noVALUE
+  8   -  noVALUE
+  9   -  noVALUE
+----------------
+
+*/
