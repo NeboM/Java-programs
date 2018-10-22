@@ -18,6 +18,7 @@ public class DoubleEndedLinkedList {
 		newUser.next = firstLink;
 		firstLink = newUser;
 	}
+	
 	public void insertInLastPosition(String username, int age){
 		User newUser = new User(username,age);
 		if(isEmpty()){
@@ -28,6 +29,7 @@ public class DoubleEndedLinkedList {
 		}
 		lastLink = newUser;
 	}
+	
 	public boolean insertAfterKey(String username, int age, User key){
 		User newUser = new User(username,age);
 		User focusUser = firstLink;
@@ -48,6 +50,7 @@ public class DoubleEndedLinkedList {
 		
 		return true;
 	}
+	
 	public void displayList(){
 		User focusUser = firstLink;
 		while(focusUser != null){
@@ -55,6 +58,7 @@ public class DoubleEndedLinkedList {
 			focusUser = focusUser.next;
 		}
 	}
+	
 	public void displayBackwards(){
 		User focusUser = lastLink;
 		while(focusUser != null){
@@ -62,6 +66,7 @@ public class DoubleEndedLinkedList {
 			focusUser = focusUser.previous;
 		}
 	}
+	
 	public boolean removeLink(User link){
 		User focusUser = firstLink;
 		while(!focusUser.isSame(link)){
@@ -85,6 +90,7 @@ public class DoubleEndedLinkedList {
 		}
 		return true;
 	}
+	
 	public static void main(String [] args){
 		DoubleEndedLinkedList theList = new DoubleEndedLinkedList();
 		theList.insertInLastPosition("john123", 26);
@@ -93,10 +99,12 @@ public class DoubleEndedLinkedList {
 		theList.insertInLastPosition("bob1212",12);
 		User afterKey = new User("bob1212",12);
 		theList.insertAfterKey("INSERTME", 12, afterKey);
-		theList.displayList();	
+		theList.displayList();
+		System.out.println();
 		theList.displayBackwards();
 	}
 }
+
 class User{
 	public User previous;
 	public User next;
@@ -119,3 +127,16 @@ class User{
 		return username + " is " + age + " years old.";
 	}
 }
+/* OUTPUT
+
+marks is 52 years old.
+john123 is 26 years old.
+eddie01 is 36 years old.
+bob1212 is 12 years old.
+INSERTME is 12 years old.
+
+INSERTME is 12 years old.
+bob1212 is 12 years old.
+eddie01 is 36 years old.
+john123 is 26 years old.
+*/
