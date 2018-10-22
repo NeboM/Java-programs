@@ -31,6 +31,7 @@ public class DoubleEndedLinkedList {
 	}
 	
 	public boolean insertAfterKey(String username, int age, User key){
+		if(isEmpty()) return false;
 		User newUser = new User(username,age);
 		User focusUser = firstLink;
 		while(!(focusUser.isSame(key))){
